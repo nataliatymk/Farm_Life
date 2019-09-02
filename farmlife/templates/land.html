@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} Użytki rolne {% endblock %}
+
+{% block content %}
+<h2>Użytki rolne</h2>
+    <ul>
+        {% for land in lands %}
+<li> <a href="/lands/details/{{ land.id }}">{{ land }}</a>
+    <a href = {% url 'edit_land' land.id %}>Edytuj</a></li>
+
+    {% endfor %}
+    </ul>
+
+    <p><a href="/lands/add">Dodaj nowy!</a></p>
+{% endblock %}

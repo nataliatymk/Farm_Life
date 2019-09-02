@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} Użytki rolne {% endblock %}
+
+{% block content %}
+<h2>{{ land.land_name }} <form method="post">
+    {% csrf_token %}
+    <button type="submit" value="{{ land.id }}" name="delete">Usuń</button>
+
+
+</form> </h2>
+
+    <p>Typ: {{ land.get_type_display }}</p>
+    <p>Powierzchnia: {{ land.area }} ha</p>
+    <p>Opis: {{ land.comments }}</p>
+
+{% endblock %}

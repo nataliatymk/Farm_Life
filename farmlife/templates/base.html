@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Farm Life{% endblock %}</title>
+<script defer src="{% static 'js/app.js' %}"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+</head>
+<body class="general">
+{% block content %}
+    <h2 class="title">Farm Life!</h2>
+
+    <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Zaloguj!</button>
+    </form>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+</body>
+</html>
