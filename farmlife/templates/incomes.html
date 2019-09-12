@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Dodatkowe przychody{% endblock %}
+
+{% block content %}
+    <h2>Dodatkowe przychody</h2>
+    <div class="heart">
+    <ul class="list">
+    {% for i in income %}
+
+        <li class="name">
+        <div class="detail">
+            <p>Nazwa: <span>{{ i.income_name }} </span></p>
+            <p>Przychód: <span>{{ i.cost }} zł </span></p>
+            <p> Data: <span>{{ i.time_add }}</span></p>
+            </div>
+            <form class="btn-inside" method="post">
+    {% csrf_token %}
+    <button class="delete" type="submit" value="{{ i.id }}" name="delete">Usuń</button>
+</form> </li>
+    {% endfor %}
+    </ul>
+        </ul>
+    <p><a class="newone" href="/incomes/add">Dodaj nowy!</a></p>
+    </div>
+
+{% endblock %}

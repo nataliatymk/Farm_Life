@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl-pl" class="general">
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Farm Life{% endblock %}</title>
+
+<script defer src="{% static 'js/app.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}"/>
+
+{% load static  %}
+
+<script type="text/javascript" src="/jsi18n/"></script>
+<script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/jquery.init.js' %}"></script>
+
+{{ form.media }}
+
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/widgets.css' %}" />
+
+
+
+
+</head>
+<div class="general">
+
+    <div class="bottom">
+    {% if user.is_authenticated %}
+    <p>Witaj, {{ user.get_username }}! <a href={% url 'edit_user' user.id %}>Zmień hasło</a> | <a href='/logout'>Wyloguj</a></p>
+    {% else %}
+        <p>Witaj, Nieznajomy. <a href='/login'>Zaloguj się.</a></p>
+    {% endif %}
+    </div>
+
+<div class="menu">
+  <ul class = 'parent-menu'>
+      <li><a href="/">Strona główna</a></li>
+    <li><a href="/lands">Użytki rolne</a></li>
+<li><a href="/plants">Rośliny</a></li>
+    <li><a href="/machinery">Maszyny rolnicze</a></li>
+    <li><a href="/incomes">Przychody</a></li>
+    <li><a href="/expenses">Wydatki</a></li>
+    <li><a href="/balance">Bilans</a></li>
+    <li><a href="/about">O aplikacji</a></li>
+    <li><a href="/contact">Kontakt</a></li>
+  </ul>
+</div>
+</div>
+<div class="block">
+{% block content %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+</div>
+</body>
+</html>

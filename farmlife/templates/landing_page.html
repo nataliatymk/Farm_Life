@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Farm Life{% endblock %}
+
+{% block content %}
+    <h2 class="title">Farm Life!</h2>
+    <div class="heart">
+    {% if user.is_authenticated %}
+        <p class="name">Zalogowano jako {{ user }}!</p>
+
+        {% else %}
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <button class="apply" type="submit">Zaloguj!</button>
+    </form>
+    <p><a id="newone" href="/create_user">Utwórz konto</a></p>
+
+    {% endif %}
+    </div>
+{% endblock %}
+
+

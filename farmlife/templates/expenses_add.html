@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Wydatki{% endblock %}
+
+{% block content %}
+ <h2>Dodaj nowy wydatek</h2>
+    <div class="heart">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <br/>
+    <button class="apply" type="submit">Wyślij!</button>
+</form>
+    </div>
+{% endblock %}

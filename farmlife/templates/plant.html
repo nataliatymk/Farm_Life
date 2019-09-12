@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Rośliny {% endblock %}
+
+{% block content %}
+<h2>Rośliny</h2>
+    <div class="heart">
+    <ul class="list">
+        {% for plant in plants %}
+<li> <a class="name" href="/plants/details/{{ plant.id }}">{{ plant }}</a>
+    <a class="edit" href = {% url 'edit_plant' plant.id %}>Edytuj</a></li>
+
+    {% endfor %}
+    </ul>
+
+    <p><a class="newone" href="/plants/add">Dodaj nowy!</a></p>
+    </div>
+{% endblock %}

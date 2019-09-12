@@ -1,0 +1,276 @@
+.general {
+    font-family:"Calibri";
+    background-image: url("/static/img/t.jpg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.menu {
+    overflow: auto;
+    position: relative;
+}
+.parent-menu {
+    background-color: rgb(88, 151, 251, 0.5);
+    min-width:200px;
+    float:left;
+    padding: 2px
+}
+.menu ul {
+    list-style-type:none;
+}
+.menu ul li a {
+    padding:10px;
+    display:block;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 18px;
+    color: #006600;
+    text-decoration:none;
+}
+.menu ul li a:hover {
+    background-color:#007ee9 ;
+}
+
+.bottom {
+    text-align: right;
+    background-color: rgb(88, 151, 251, 0.5);
+    height: 40px;
+}
+
+.bottom p{
+    padding: 10px;
+}
+.bottom a{
+    text-decoration: none;
+    color: red;
+
+}
+
+.block h2{
+    margin: 10px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: "Times New Roman";
+    font-size: 50px;
+    color: #b80000;
+    font-weight: 700;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.list li {
+    background: rgb(158, 207, 255, 0.5);
+    margin: 8px;
+    padding: 15px;
+}
+
+.name{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+
+}
+
+.edit {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #f5dd5d;
+    padding: 5px;
+    margin-left:  57em;
+}
+
+
+.title {
+    font-size: 2.5em;
+    font-family: Calibri;
+    color: black;
+    position: center;
+}
+
+.heart {
+    background-color: rgba(50, 115, 220, 0.4);
+    width: 97em;
+    position: absolute;
+    margin: 10%;
+    padding: 15px;
+    left: 3%;
+    top: -5%;
+
+}
+
+
+label  {
+    color: #ffffcc;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 25px;
+    font-weight: bold;
+    /*display: flex;*/
+
+}
+
+input {
+    height: 20px;
+
+}
+
+
+.delete {
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+
+}
+
+.delete:hover {background-color: #CC3434}
+
+.delete:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.delete {
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #5897fb;
+  border: none;
+  border-radius: 15px;
+
+}
+
+.delete:hover {background-color: #CC3434}
+
+
+.apply {
+  margin-bottom: 5px;
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #5897fb;
+  border: none;
+  border-radius: 15px;
+  transform: translate(0%, -20%);
+
+}
+
+.apply:hover {background-color: #4CAF50}
+
+#apply {
+  margin-bottom: 5px;
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #5897fb;
+  border: none;
+  border-radius: 15px;
+
+}
+
+#apply:hover {background-color: #4CAF50}
+
+.newone {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background-color: #900990;
+    margin: 50px;
+    padding: 5px;
+}
+
+#newone {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background-color: #900990;
+    padding: 5px;
+}
+
+
+.detail p{
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px;
+    color: black;
+}
+
+.detail span{
+    font-size: 24px;
+    color: white;
+
+}
+.detail ul {
+    margin: 0px;
+
+}
+.detail li {
+    font-size: 24px;
+    color: white;
+    list-style-type: square;
+
+}
+
+.balance h4{
+    font-size: 30px;
+    color: #f5dd5d;
+    font-weight: bold;
+}
+
+.balance li{
+    font-size: 28px;
+    list-style-type: square;
+    color: white;
+
+}
+
+.balance h3{
+    font-size: 36px;
+    color: #f5dd5d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn-inside {
+    text-align: right;
+}
+
+.about {
+    font-size: 20px;
+    color: white;
+}

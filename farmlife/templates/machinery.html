@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Maszyny rolnicze {% endblock %}
+
+{% block content %}
+<h2>Maszyny rolnicze</h2>
+    <div class="heart">
+    <ul class="list">
+        {% for m in machinery %}
+<li> <a class="name" href="/machinery/details/{{ m.id }}">{{ m }}</a>
+    <a class="edit" href = {% url 'edit_machinery' m.id %}>Edytuj</a></li>
+
+    {% endfor %}
+    </ul>
+
+    <p><a class="newone" href="/machinery/add">Dodaj nowy!</a></p>
+    </div>
+{% endblock %}
