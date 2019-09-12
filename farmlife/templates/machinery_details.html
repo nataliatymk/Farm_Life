@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Maszyny rolnicze {% endblock %}
+
+{% block content %}
+    <h2>{{ machinery.machinery_name }} </h2>
+    <div class="heart">
+<div class="detail">
+    <p>Spalanie (l/100km): <span>{{ machinery.fuel_consumption }}</span></p>
+    <p>Pola:
+    {% for land in machinery.land_machinery.all %}
+    <ul>
+
+    <li>{{land}}</li>
+
+    </ul>
+       {% endfor %}
+    </p>
+    <p>Akcesoria:<span>
+        <ul>
+        <li><b>Nazwa: </b>{{ machinery.accessories }}</li>
+        <li><b>Szerokość:</b> {{ machinery.accessories_width }}</li>
+        <li><b>Data:</b> {{ machinery.time_add }}</li>
+        </ul></span></p>
+</div>
+        <form method="post">
+    {% csrf_token %}
+    <button class="delete" type="submit" value="{{ machinery.id }}" name="delete">Usuń</button>
+
+</form>
+
+    </div>
+{% endblock %}

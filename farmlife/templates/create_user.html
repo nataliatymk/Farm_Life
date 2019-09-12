@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Stwórz nowego użytkownika{% endblock %}
+
+{% block content %}
+ <h2>{{ message }}</h2>
+    <div class="heart">
+    <div class="container">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <button class="apply" type="submit">Utwórz!</button>
+</form>
+    </div>
+    </div>
+
+{% endblock %}

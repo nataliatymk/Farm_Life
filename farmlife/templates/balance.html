@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Bilans{% endblock %}
+
+{% block content %}
+<h2>Bilans</h2>
+    <div class="heart">
+    <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button id="apply" class="balance-btn" type="submit">Oblicz!</button>
+    </form>
+    {% if fuel_price %}
+        <div class="balance">
+        <h4>Rośliny</h4>
+    <ul>
+
+     <li>Zakup nasion: {{ plant_price }} zł</li>
+     <li>Sprzedaż (zł/t): {{ sale }} zł</li>
+    <li>Oczekiwany zysk ze sprzedaży: {{ expected_sale }} zł</li>
+    <li>Faktyczny zysk ze sprzedaży: {{harvest_sale}} zł</li>
+    <li>Profit: {{ profit }}</li>
+    </ul>
+    <h4>Maszyny rolnicze:</h4>
+        <ul>
+        <li>Cena paliwa: {{fuel_price}} zł</li>
+        <li>Wydatki na paliwo: {{ fuel }} zł </li>
+
+           </ul>
+    <h4>Wydatki:</h4>
+        <ul>
+    <li>Dodatkowe wydatki: {{ expenses }} zł </li>
+    </ul>
+        <h4>Dochody:</h4>
+    <ul>
+    <li>Dodatkowe dochody: {{ incomes }} zł </li>
+    </ul>
+
+        <h3>Całkowity bilans gospodarstwa: {{ final_balance }} zł</h3>
+    {% endif %}
+    </div>
+    </div>
+{% endblock %}

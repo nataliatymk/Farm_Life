@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'farm.middleware.RequireLoginMiddleware',  # Require login ]
 ]
 
 ROOT_URLCONF = 'farm.urls'
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-en'
 
 TIME_ZONE = 'UTC'
 
@@ -123,3 +124,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REQUIRED_URLS = (
+    r'(.*)',
+)
+LOGIN_REQUIRED_URLS_EXCEPTIONS = (
+    r'/admin(.*)$',
+    r'/login(.*)$',
+    r'/about(.*)$',
+    r'/contact(.*)$',
+    r'/create_user(.*)$',
+
+)
+LOGIN_URL = '/login'

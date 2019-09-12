@@ -3,13 +3,16 @@
 
 {% block content %}
 <h2>Użytki rolne</h2>
-    <ul>
+    <div class="heart">
+
+    <ul class="list">
         {% for land in lands %}
-<li> <a href="/lands/details/{{ land.id }}">{{ land }}</a>
-    <a href = {% url 'edit_land' land.id %}>Edytuj</a></li>
+<li> <a class="name" href="/lands/details/{{ land.id }}">{{ land }}</a>
+    <a class='edit' href = {% url 'edit_land' land.id %}>Edytuj</a></li>
 
     {% endfor %}
     </ul>
+    <p><a class="newone" href="/lands/add">Dodaj nowy!</a></p>
+    </div>
 
-    <p><a href="/lands/add">Dodaj nowy!</a></p>
 {% endblock %}

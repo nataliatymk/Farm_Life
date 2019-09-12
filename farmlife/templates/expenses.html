@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Dodatkowe wydatki{% endblock %}
+
+{% block content %}
+    <h2>Dodatkowe wydatki</h2>
+    <div class="heart">
+    <ul class="list">
+    {% for extra in expenses %}
+        <li class="name">
+          <div class="detail">
+            <p>Nazwa: <span>{{ extra.expenses_name }} </span></p>
+            <p>Koszt: <span>{{ extra.cost }} zł</span></p>
+            <p> Data: <span>{{ extra.time_add }}</span></p>
+            </div>
+
+            <form method="post" class="btn-inside">
+    {% csrf_token %}
+    <button class="delete" type="submit" value="{{ extra.id }}" name="delete">Usuń</button>
+</form></li>
+    {% endfor %}
+    </ul>
+    <p><a class="newone" href="/expenses/add">Dodaj nowy!</a></p>
+    </div>
+
+{% endblock %}

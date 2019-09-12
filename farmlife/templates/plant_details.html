@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Rośliny {% endblock %}
+
+{% block content %}
+    <h2>{{ plant.plant_name }}</h2>
+    <div class="heart">
+
+<div class="detail">
+    <p>Przewidywany plon (t): <span>{{ plant.expected_yield }}</span></p>
+        <p>Cena nasion (zł): <span>{{ plant.plant_price }} ha</span></p>
+    <p>Zbiór (t): <span>{{ plant.harvest }}</span></p>
+    <p>Cena sprzedaży (zł/t): <span>{{ plant.sale }}</span></p>
+    <p>Obsadzone pole:
+    {% for land in plant.land_plant.all %}
+        <ul>
+        <li>{{ land }}</li>
+        </ul>{% endfor %}</p>
+    <p>Komentarz: <span>{{ plant.comments}}</span></p>
+    <p>Data: <span>{{ plant.time_add}}</span></p>
+</div>
+        <form method="post">
+    {% csrf_token %}
+    <button class="delete" type="submit" value="{{ plant.id }}" name="delete">Usuń</button>
+</form>
+    </div>
+{% endblock %}
