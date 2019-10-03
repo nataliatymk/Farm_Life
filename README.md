@@ -2,11 +2,12 @@
 
 Jest to aplikacja stworzona do zarządzania gospodarstwem rolnym. Po założenia konta można wprowadzać m.in. swoje użytki rolne, rośliny uprawne oraz maszyny rolnicze, a także parametry takie, jak np. powierzchnia czy spalanie paliwa. Na podstawie podanych atrybutów wyliczyć można bilans gospodarstwa w wybranym przez siebie zakresie.
 
-Aplikacja zostanie rozbudowana o:
-<br> możliwość dodawania zwierząt gospodarskich
-<br> możliwość rozliczania pracowników
-<br> rozdzielenie obliczeń dla pól uprawnych, sadów i pastwisk
-<br> możliwość zapisania bilansu
+<ul>Aplikacja zostanie rozbudowana o:
+  <li> możliwość dodawania zwierząt gospodarskich</li>
+<li> możliwość rozliczania pracowników</li>
+<li> rozdzielenie obliczeń dla pól uprawnych, sadów i pastwisk</li>
+<li> możliwość zapisania bilansu</li>
+  </ul>
 
 <b>Technologie:</b> PostgreSQL, Django
 
