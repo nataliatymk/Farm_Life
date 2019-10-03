@@ -2,7 +2,7 @@
 
 Jest to aplikacja stworzona do zarządzania gospodarstwem rolnym. Po założenia konta można wprowadzać m.in. swoje użytki rolne, rośliny uprawne oraz maszyny rolnicze, a także parametry takie, jak np. powierzchnia czy spalanie paliwa. Na podstawie podanych atrybutów wyliczyć można bilans gospodarstwa w wybranym przez siebie zakresie.
 
-<ul>Aplikacja zostanie rozbudowana o:
+Aplikacja zostanie rozbudowana o:<ul>
   <li> możliwość dodawania zwierząt gospodarskich</li>
 <li> możliwość rozliczania pracowników</li>
 <li> rozdzielenie obliczeń dla pól uprawnych, sadów i pastwisk</li>
