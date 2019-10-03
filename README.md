@@ -15,10 +15,10 @@ Aplikacja zostanie rozbudowana o:<ul>
 
 Farm life is an application created for the management of your farm. After creating an account, you can add your arable land, crops, agricultural machinery as well as their parameters such as area or fuel usage. Basing on the given attributes the application calculates the final farm balance in any range of time of your choice. 
 
-The application will be extended by:
-<br>the option of adding farm animals
-<br>employee accounting option
-<br>separation of calculations for arable fields, orchards and pastures
-<br>saving the final farm's result on your device 
-
+The application will be extended by:<ul>
+<li>the option of adding farm animals</li>
+<li>employee accounting option</li>
+<li>separation of calculations for arable fields, orchards and pastures</li>
+<li>saving the final farm's result on your device</li>
+</ul>
 <b>Technology:</b> PostgreSQL, Django
