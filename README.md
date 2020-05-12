@@ -9,7 +9,7 @@ Aplikacja zostanie rozbudowana o:<ul>
 <li> możliwość zapisania bilansu</li>
   </ul>
 
-<b>Technologie:</b> PostgreSQL, Django, HTML, CSS
+<b>Technologie:</b> Python, Django, HTML, CSS, PostgreSQL
 
 ## Project's description
 
@@ -21,4 +21,4 @@ The application will be extended by:<ul>
 <li>separation of calculations for arable fields, orchards and pastures</li>
 <li>saving the final farm's result on your device</li>
 </ul>
-<b>Technology:</b> PostgreSQL, Django, HTML, CSS
+<b>Technology:</b> Python, Django, HTML, CSS, PostgreSQL
