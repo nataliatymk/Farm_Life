@@ -12,7 +12,7 @@ LANDS =(
 )
 
 class AgriculturalLand(models.Model):
-    user_log = models.ForeignKey (User, on_delete="models.CASCADE")
+    user_log = models.ForeignKey (User, on_delete=models.CASCADE)
     land_name = models.CharField(max_length=256)
     type = models.IntegerField(choices=LANDS)
     area = models.DecimalField(max_digits=10, decimal_places=2)
@@ -23,7 +23,7 @@ class AgriculturalLand(models.Model):
 
 
 class Plants(models.Model):
-    user_log = models.ForeignKey (User, on_delete="models.CASCADE")
+    user_log = models.ForeignKey (User, on_delete=models.CASCADE)
     plant_name = models.CharField(max_length=256)
     expected_yield = models.DecimalField(max_digits=10, decimal_places=2)
     plant_price = models.DecimalField (max_digits=10, decimal_places=2)
@@ -38,7 +38,7 @@ class Plants(models.Model):
         return self.plant_name
 
 class AgriculturalMachinery(models.Model):
-    user_log = models.ForeignKey (User, on_delete="models.CASCADE")
+    user_log = models.ForeignKey (User, on_delete=models.CASCADE)
     machinery_name = models.CharField(max_length=256)
     fuel_consumption = models.IntegerField()
     land_machinery = models.ManyToManyField(AgriculturalLand, blank=True)
@@ -50,7 +50,7 @@ class AgriculturalMachinery(models.Model):
         return self.machinery_name
 
 class ExtraExpenses(models.Model):
-    user_log = models.ForeignKey (User, on_delete="models.CASCADE")
+    user_log = models.ForeignKey (User, on_delete=models.CASCADE)
     expenses_name = models.CharField(max_length=256)
     cost = models.DecimalField (max_digits=10, decimal_places=2)
     time_add = models.DateField ()
@@ -59,7 +59,7 @@ class ExtraExpenses(models.Model):
         return self.expenses_name
 
 class AdditionalIncome(models.Model):
-    user_log = models.ForeignKey (User, on_delete="models.CASCADE")
+    user_log = models.ForeignKey (User, on_delete=models.CASCADE)
     income_name = models.CharField(max_length=256)
     cost = models.DecimalField (max_digits=10, decimal_places=2)
     time_add = models.DateField ()

@@ -76,15 +76,12 @@ WSGI_APPLICATION = 'farm.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'HOST': '127.0.0.1',
-        'NAME': 'farmlife',
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'postgres',
-        'PASSWORD': 'coderslab',
-    }
-}
+try:
+    from farm.local_settings import DATABASES
+except ModuleNotFoundError:
+    print("Brak konfiguracji bazy danych w pliku local_settings.py!")
+    print("Uzupełnij dane i spróbuj ponownie!")
+    exit(0)
 
 
 # Password validation
