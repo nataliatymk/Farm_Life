@@ -267,15 +267,16 @@ class BalanceView (View):
     def post (self, request):
         form = BalanceForm (request.POST)
         fuel_price = (request.POST.get ("fuel_price"))
-        start_date = (request.POST.get ("start_date"))
-        sd = datetime.strptime (start_date, "%d.%m.%Y")
+
+        sd = datetime.strptime ((request.POST.get ("start_date")), "%d.%m.%Y")
         start = datetime.strftime (sd, "%Y-%m-%d")
-        end_date = (request.POST.get ("end_date"))
-        ed = datetime.strptime (end_date, "%d.%m.%Y")
+        ed = datetime.strptime ((request.POST.get ("end_date")), "%d.%m.%Y")
         end = datetime.strftime (ed, "%Y-%m-%d")
+
         area_dict = {}
         fuel_dict = {}
         harvest_dict = {}
+
         expenses = 0
         incomes = 0
         harvest_sale = 0
@@ -299,12 +300,12 @@ class BalanceView (View):
             machine_name = i.machinery_name
             if machine_name not in area_dict:
                 for sum_area in machine:
-                    area += int (sum_area.area)
+                    area += int(sum_area.area)
                     area_dict[machine_name] = area
 
             if machine_name in area_dict:
                 road = ((area_dict[machine_name]) / 100) / i.accessories_width
-                fuel_cost = i.fuel_consumption * float (fuel_price)
+                fuel_cost = i.fuel_consumption * float(fuel_price)
                 result = round (road * fuel_cost, 2)
                 fuel_dict[machine_name] = round (result, 2)
                 fuel += result
@@ -330,7 +331,7 @@ class BalanceView (View):
         profit = harvest_sale - expected_sale
 
         final_balance = round (
-            float (incomes) + float (harvest_sale) - float (plant_price) - float (fuel) - float (expenses), 2)
+            float(incomes) + float(harvest_sale) - float(plant_price) - float(fuel) - float(expenses), 2)
 
         context = {"final_balance": final_balance, "expected_sale": expected_sale, "harvest_sale": harvest_sale,
                    "expenses": expenses, "incomes": incomes, "fuel": fuel, "plant_price": plant_price,
@@ -440,7 +441,6 @@ class EditUser (View):
     def get (self, request, user_id):
         message = "Zmień hasło"
         user = User.objects.get (id=user_id)
-        print (user)
         form = EditUserForm ()
         return render (request, "create_user.html", context={"form": form, "message": message})
 
